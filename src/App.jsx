@@ -1,9 +1,9 @@
 function App() {
   const products = [
     {
-      name: "Panel Pterodactyl",
+      name: "Asset editing",
       price: "Rp10.000",
-      desc: "Hosting bot & server ringan"
+      desc: "Templat capcut dan apk edit lainya"
     },
     {
       name: "VPS Premium",
@@ -73,11 +73,11 @@ function App() {
             margin: "auto"
           }}
         >
-          Menjual panel, VPS, jasa website, dan kebutuhan digital lainnya.
+          Menjual, Aset editing, topup game, dan kebutuhan digital lainnya.
         </p>
 
         <a
-          href="https://wa.me/6281234567890"
+          href="https://wa.me/6281517527100"
           target="_blank"
           style={{
             display: "inline-block",
