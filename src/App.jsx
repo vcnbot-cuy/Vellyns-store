@@ -1,183 +1,94 @@
+import './App.css'
+
 function App() {
-  const products = [
+  const games = [
     {
-      name: "Asset editing",
-      price: "Rp10.000",
-      desc: "Templat capcut dan apk edit lainya"
+      name: 'MLBB',
+      image:
+        'https://cdn.cloudflare.steamstatic.com/steam/apps/1203220/header.jpg',
     },
     {
-      name: "VPS Premium",
-      price: "Rp50.000",
-      desc: "Cocok untuk website & bot 24 jam"
+      name: 'PUBG Mobile',
+      image:
+        'https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop',
     },
     {
-      name: "Jasa Website",
-      price: "Rp100.000",
-      desc: "Landing page modern & cepat"
-    }
+      name: 'Free Fire',
+      image:
+        'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop',
+    },
+    {
+      name: 'COD Mobile',
+      image:
+        'https://images.unsplash.com/photo-1548686304-89d188a80029?q=80&w=1200&auto=format&fit=crop',
+    },
+    {
+      name: 'Point Blank',
+      image:
+        'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop',
+    },
+    {
+      name: 'Ragnarok',
+      image:
+        'https://images.unsplash.com/photo-1511882150382-421056c89033?q=80&w=1200&auto=format&fit=crop',
+    },
   ]
 
   return (
-    <div
-      style={{
-        background: "#0f172a",
-        color: "white",
-        minHeight: "100vh",
-        fontFamily: "sans-serif"
-      }}
-    >
+    <div className="app">
+      <header className="header">
+        <div className="logo">V</div>
 
-      {/* NAVBAR */}
-      <nav
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "20px",
-          position: "sticky",
-          top: 0,
-          background: "#111827",
-          borderBottom: "1px solid #1f2937"
-        }}
-      >
-        <h2 style={{ color: "#a855f7" }}>Vellyns Store</h2>
+        <input
+          type="text"
+          placeholder="Cari Game atau Voucher"
+          className="search"
+        />
 
-        <div style={{ display: "flex", gap: "15px" }}>
-          <a href="#home" style={link}>Home</a>
-          <a href="#produk" style={link}>Produk</a>
-          <a href="#contact" style={link}>Contact</a>
+        <div className="menu">☰</div>
+      </header>
+
+      <section className="hero">
+        <div className="hero-overlay"></div>
+
+        <div className="hero-content">
+          <h1>TOP UP GAME</h1>
+          <p>Lebih hemat mabar jadi semangat</p>
+
+          <button>Topup Sekarang</button>
         </div>
-      </nav>
-
-      {/* HERO */}
-      <section
-        id="home"
-        style={{
-          padding: "80px 20px",
-          textAlign: "center"
-        }}
-      >
-        <h1
-          style={{
-            fontSize: "50px",
-            marginBottom: "20px"
-          }}
-        >
-          Toko Digital Modern 🚀
-        </h1>
-
-        <p
-          style={{
-            color: "#9ca3af",
-            maxWidth: "600px",
-            margin: "auto"
-          }}
-        >
-          Menjual, Aset editing, topup game, dan kebutuhan digital lainnya.
-        </p>
-
-        <a
-          href="https://wa.me/6281517527100"
-          target="_blank"
-          style={{
-            display: "inline-block",
-            marginTop: "30px",
-            background: "#22c55e",
-            color: "white",
-            padding: "14px 28px",
-            borderRadius: "12px",
-            textDecoration: "none",
-            fontWeight: "bold"
-          }}
-        >
-          Chat WhatsApp
-        </a>
       </section>
 
-      {/* PRODUK */}
-      <section
-        id="produk"
-        style={{
-          padding: "40px 20px"
-        }}
-      >
-        <h2
-          style={{
-            textAlign: "center",
-            marginBottom: "30px",
-            fontSize: "35px"
-          }}
-        >
-          Produk Kami
-        </h2>
+      <section className="category">
+        <button className="active">All</button>
+        <button>Top Up</button>
+        <button>Voucher</button>
+        <button>Pembayaran</button>
+      </section>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
-            gap: "20px"
-          }}
-        >
-          {products.map((item, index) => (
-            <div
-              key={index}
-              style={{
-                background: "#1e293b",
-                padding: "20px",
-                borderRadius: "20px",
-                border: "1px solid #334155"
-              }}
-            >
-              <h3>{item.name}</h3>
+      <section className="products">
+        {games.map((game, index) => (
+          <div className="card" key={index}>
+            <img src={game.image} alt={game.name} />
 
-              <p style={{ color: "#9ca3af" }}>
-                {item.desc}
-              </p>
+            <div className="card-body">
+              <h3>{game.name}</h3>
 
-              <h2 style={{ color: "#a855f7" }}>
-                {item.price}
-              </h2>
-
-              <button
-                style={{
-                  width: "100%",
-                  marginTop: "15px",
-                  padding: "12px",
-                  border: "none",
-                  borderRadius: "12px",
-                  background: "#7c3aed",
-                  color: "white",
-                  fontWeight: "bold",
-                  cursor: "pointer"
-                }}
-              >
-                Checkout
-              </button>
+              <button>Beli</button>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </section>
 
-      {/* FOOTER */}
-      <footer
-        id="contact"
-        style={{
-          marginTop: "60px",
-          padding: "30px",
-          textAlign: "center",
-          borderTop: "1px solid #1f2937",
-          color: "#9ca3af"
-        }}
+      <a
+        href="https://wa.me/6281517527100"
+        target="_blank"
+        className="wa"
       >
-        © 2026 Vellyns Store — All Rights Reserved
-      </footer>
+        💬
+      </a>
     </div>
   )
-}
-
-const link = {
-  color: "white",
-  textDecoration: "none"
 }
 
 export default App
